@@ -1,25 +1,45 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import Navbar from './components/Navbar';
 import Textform from './components/Textform';
 import './App.css';
+import About from './components/About';
+import { func } from 'prop-types';
 
-class App extends Component {
-  render() {  
+
+
+function App(){
+
+  const[mode,setDarkMode] = useState('light'); // whether dark mode is enabled or not 
+  const toggleMode = ()=>{
+    if(mode == 'light'){
+      setDarkMode('dark');
+      document.body.style.backgroundColor = 'black';
+    }
+    else{
+      setDarkMode('light'); 
+      document.body.style.backgroundColor = 'white';
+
+    }
+  
+  }
+   
     return (
-        <div>
+    <div>
             
             <h1>hello</h1>
-            <Navbar title="Title"/>
-            <br></br><br></br>
+            <Navbar title="Title" mode={mode} toggleMode={toggleMode}/>
+            <br></br> 
   
             <div class ="container">
-            <Textform heading="enter in it "/>
+              
+            <Textform heading="enter in it " mode={mode}/>
+            
             </div>
 
            
     </div>
     );
-  }
+  
 }
 
 export default App;
