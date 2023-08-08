@@ -1,35 +1,23 @@
 import React, { Component } from 'react'
 import './App.css'
 
-
+// =---------------------=====================         Listing with map fuction
 
 class App extends Component {
+  // make constructor and state
+  // save some names in state
+  // use map function  for make liting of names 
+
   constructor(){
     super();
     this.state={
-      name:"",
-      password:"",
-      nameError:"",
-      passwordError:"" 
-    }
-  }
+      list:[
+        {name:'adi',phone:'2343',email:'aditya@gma8i.com'},
+        {name:'ghj',phone:'4564',email:'aditya@gma8i.com'},
+        {name:'sdfs',phone:'5678',email:'thakur@gma8i.com'},
 
-  valid(){
-    if(!this.state.name.includes("@") && this.state.password.length<5){
-      this.setState({nameError:"invalid form",passwordError:"Password Length should be more than 5"})
-    }
-    else if(!this.state.name.includes("@")){
-      this.setState({nameError:"inavalid form"})
-    }
-    else if(this.state.password.length<5){
-      this.setState({passwordError:"Password length should be more than 5"})
-    }
-  }
 
-  submit(){
-    if(this.valid()){
-      alert("form has been submited")
-
+      ]
     }
   }
 
@@ -38,15 +26,18 @@ class App extends Component {
       <div className="App">       
         
         <h1>Form validation</h1>
+
+        {
+          this.state.list.map((item)=>
+            <div>
+              Name:-<span>{item.name}</span>
+              Phone:-<span>{item.phone}</span>
+              Email:-<span>{item.email}</span>
+            </div>
+          )
+        }
         
-        <label>text</label><br></br>
-        <input type="text" onChange={(event)=>{this.setState({name:event.target.value})}} />
-        <p style={{color:"red"}} >{this.state.nameError}</p>
-        <br></br>
-        <label>password</label><br></br>
-        <input type="password" onChange={(event)=>{this.setState({password:event.target.value})}} />
-        <p style={{color:"red"}} > {this.state.passwordError} </p>
-        <button onClick={()=> this.submit()} > submit</button>
+       
       </div>
     )
   }
