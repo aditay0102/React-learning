@@ -1,0 +1,106 @@
+/* 
+pink =   rgb(255,0,102)
+light pink = rgb(242,152,166)
+pearl = #b1aebb
+spft peach = #fefdfd
+dark = #3a3153
+
+
+purple = #E80CS2
+Darkpurple =  #5f43b2
+light red = #FF370D
+red = #E8120C
+*/
+h1{
+    display: flex;
+    align-items: start;
+    color: rgb(255,0,102);
+}
+
+.form-label{
+    display: flex;
+    align-items: start;
+    color: rgb(255,0,102);
+}
+ 
+.btn{
+    background-color: rgb(255,0,102);
+    border-radius: 10px;
+    width: 50%;
+}
+
+
+.feedback{
+    background-image: url('../assets/background.jpg');
+    padding: 15px;
+    height: 65vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.feed{
+    background: transparent;
+    backdrop-filter: blur(5px);
+}
+
+
+.contact_us{
+    background-color: #392B58;
+    width: 100%;
+    height: 83vh;
+    display: flex;
+    flex-direction: column;
+    color: white;
+
+}
+
+
+
+
+.tags{
+    background:transparent;
+    backdrop-filter: blur(5px);
+    display: flex;
+    margin: 5px;
+}
+.tagNames{
+    margin:5px;
+    text-decoration: underline;
+    color:  #6C969D;
+    height: 30px;
+    width:30%;
+    font-weight: bold;
+    font-size: larger;
+}
+
+.extras{  
+    height: 5rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    
+
+}
+
+
+.extra{
+    background: transparent;
+    backdrop-filter: blur(1px);
+    color: #99D5C9;
+    margin: 2px;
+    background:transparent;
+    height: 5rem;
+    width:30%;
+    display: flex;
+    justify-content: center;
+
+
+    font-size: small;
+
+}
+
+li{
+    list-style: none;
+}

@@ -1,0 +1,56 @@
+/* 
+pink =   rgb(255,0,102)
+light pink = rgb(242,152,166)
+pearl = #b1aebb
+spft peach = #fefdfd
+dark = #3a3153
+
+
+purple = #E80CS2
+Darkpurple =  #5f43b2
+light red = #FF370D
+red = #E8120C
+*/
+
+.Footer{
+    backgroiund-color: black;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    color: black
+
+}
+
+.socials{
+
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.social{
+    background-color:   #2D0320;
+    color: rgb(242,152,166);
+    height: 64px;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    font-size: larger;
+}
+
+.s2{
+    justify-content: space-evenly;
+    font-size: 170%;
+    display: flex;
+}
+
+.s2Center{
+    height: 50px;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+ 
+
+
