@@ -1,54 +1,30 @@
-import logo from './logo.svg';
+
 import './App.css';
-import React from 'react';
+import React,{useState,useMemo} from 'react';
 
+// using useMemo hook 
+// which is based on pure component
 
+// useMemo is used to save unwanted calls 
 
-// free apis in  // reqres.in
+function App(){
+    const[count,setCount] = useState(0);
 
-class App extends React.Component{
-  constructor(){
-    super();
-    this.state={
-      users: null
-    }
-  }
+    const multiCountMemo = useMemo( function updateCount(){
+        console.log("update count ")
+        return count*5
+    },[count]) // this is the condition if count is updated then  this useMultiCountMemo  function is called ; 
 
-  componentDidMount(){  // used to fetch api and store it 
-    fetch('https://reqres.in/api/users').then((resp)=>{
-      resp.json().then((result)=>{
-        console.log(result.data) // here .data is the particular data we needed  
-        this.setState({users:result.data}) // storing the data 
-      })
-    })
-  }
-
-
-  render(){
     return(
       <div className='App'>
-        <h1>Fetch Api Data</h1>
+        <h1>count {count}</h1>
+        <br></br>
+        <h2>{multiCountMemo}</h2>
 
-      { 
-        this.state.users ?
-        this.state.users.map((item,i)=> // here i is the serial number or key
-          
-        <div>
-          <p>{i}---
-            {item.first_name}
-            {item.last_name}
-            ---
-            {item.email}
-          </p>
-        </div>
-        )
-        :
-        null
-      }
+        <button onClick={()=> setCount(count+1)}>updaste Count</button>
       </div>
 
     );
-  }
 }
 
 export default App;
