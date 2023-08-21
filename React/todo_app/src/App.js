@@ -1,38 +1,19 @@
-import logo from './logo.svg';
+import React,{useState} from 'react';
 import './App.css';
-import Todoinput from './components/Todoinput';
-import { useState } from 'react';
-import TodoList from './components/TodoList';
+import Form from './components/Form';
 
 function App() {
-  const [listTodo,setListTodo] = useState([]);
+  const [Count,setCount] = useState(0);
 
-  let addList = (inputText) =>{
-    if(inputText !== ""){
-      setListTodo([...listTodo,inputText]);
-    }
+  const addTask = (task) =>{
+    console.log(task)
   }
 
-  const deleteListItem = (key)=>{
-    let newListTodo = [...listTodo];
-    newListTodo.splice(key,1);
-    setListTodo([...newListTodo])
-  }
 
   return (
     <div className="App">
-      <div  className="main-container">
-        <div className='center-container'>
-          <Todoinput addList={addList}/>
-
-          <hr/>
-          {listTodo.map((listItem,i)=>{
-            return(
-              <TodoList key={i}  index={i} item={listItem} deleteItem={deleteListItem} />
-            )
-          })}
-        </div>
-      </div>
+      <h1>My Task List</h1>
+      <Form addTask={addTask} />
     </div>
   );
 }
